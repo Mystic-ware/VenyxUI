@@ -96,7 +96,7 @@ do
 		object.ImageTransparency = 1
 		utility:Tween(clone, {Size = object.Size}, 0.2)
 		
-		spawn(function()
+		task.spawn(function()
 			wait(0.2)
 		
 			object.ImageTransparency = 0
@@ -151,7 +151,7 @@ do
 			key = input.InputBegan:Wait()
 		end
 		
-		wait() -- overlapping connection
+		task.wait() -- overlapping connection
 		
 		return key
 	end
