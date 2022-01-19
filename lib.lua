@@ -1,4 +1,6 @@
--- venyx ui lib reuploaded by me
+-- Added task library because dumb didn't
+-- Reuploaded by @zxciaz
+
 -- init
 local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
@@ -97,7 +99,7 @@ do
 		utility:Tween(clone, {Size = object.Size}, 0.2)
 		
 		task.spawn(function()
-			wait(0.2)
+			task.wait(0.2)
 		
 			object.ImageTransparency = 0
 			clone:Destroy()
@@ -473,10 +475,10 @@ do
 				Size = UDim2.new(0, 511, 0, 428),
 				Position = self.position
 			}, 0.2)
-			wait(0.2)
+			task.wait(0.2)
 			
 			utility:Tween(topbar, {Size = UDim2.new(1, 0, 0, 38)}, 0.2)
-			wait(0.2)
+			task.wait(0.2)
 			
 			container.ClipsDescendants = false
 			self.position = nil
@@ -485,13 +487,13 @@ do
 			container.ClipsDescendants = true
 			
 			utility:Tween(topbar, {Size = UDim2.new(1, 0, 1, 0)}, 0.2)
-			wait(0.2)
+			task.wait(0.2)
 			
 			utility:Tween(container, {
 				Size = UDim2.new(0, 511, 0, 0),
 				Position = self.position + UDim2.new(0, 0, 0, 428)
 			}, 0.2)
-			wait(0.2)
+			task.wait(0.2)
 		end
 		
 		self.toggling = false
@@ -597,7 +599,7 @@ do
 		notification.Size = UDim2.new(0, 0, 0, 60)
 		
 		utility:Tween(notification, {Size = UDim2.new(0, textSize.X + 70, 0, 60)}, 0.2)
-		wait(0.2)
+		task.wait(0.2)
 		
 		notification.ClipsDescendants = false
 		utility:Tween(notification.Flash, {
@@ -620,13 +622,13 @@ do
 			notification.Flash.Position = UDim2.new(0, 0, 0, 0)
 			utility:Tween(notification.Flash, {Size = UDim2.new(1, 0, 1, 0)}, 0.2)
 			
-			wait(0.2)
+			task.wait(0.2)
 			utility:Tween(notification, {
 				Size = UDim2.new(0, 0, 0, 60),
 				Position = notification.Position + UDim2.new(0, textSize.X + 70, 0, 0)
 			}, 0.2)
 			
-			wait(0.2)
+			task.wait(0.2)
 			notification:Destroy()
 		end
 		
@@ -704,7 +706,7 @@ do
 			text.TextSize = 0
 			utility:Tween(button.Title, {TextSize = 14}, 0.2)
 			
-			wait(0.2)
+			task.wait(0.2)
 			utility:Tween(button.Title, {TextSize = 12}, 0.2)
 			
 			if callback then
@@ -862,7 +864,7 @@ do
 				Position = UDim2.new(1, -210, 0.5, -8)
 			}, 0.2)
 			
-			wait()
+			task.wait()
 
 			input.TextXAlignment = Enum.TextXAlignment.Left
 			input:CaptureFocus()
@@ -1494,7 +1496,7 @@ do
 				utility:Tween(tab, {Size = UDim2.new(0, 162, 0, 169)}, 0.2)
 				
 				-- update size and position
-				wait(0.2)
+				task.wait(0.2)
 				tab.ClipsDescendants = false
 				
 				canvasSize, canvasPosition = canvas.AbsoluteSize, canvas.AbsolutePosition
@@ -1503,7 +1505,7 @@ do
 				utility:Tween(tab, {Size = UDim2.new(0, 0, 0, 0)}, 0.2)
 				tab.ClipsDescendants = true
 				
-				wait(0.2)
+				task.wait(0.2)
 				tab.Visible = false
 			end
 			
@@ -1655,7 +1657,7 @@ do
 				utility:Wait()
 			end
 			
-			wait(0.5)
+			task.wait(0.5)
 			utility:Tween(circle, {ImageTransparency = 1}, 0.2)
 		end)
 		
@@ -1851,7 +1853,7 @@ do
 				end
 			end
 			
-			wait(0.1)
+			task.wait(0.1)
 			page.container.Visible = true
 			
 			if focusedPage then
@@ -1867,17 +1869,17 @@ do
 				end
 			end
 			
-			wait(0.05)
+			task.wait(0.05)
 			
 			for i, section in pairs(page.sections) do
 			
 				utility:Tween(section.container.Title, {TextTransparency = 0}, 0.1)
 				section:Resize(true)
 				
-				wait(0.05)
+				task.wait(0.05)
 			end
 			
-			wait(0.05)
+			task.wait(0.05)
 			page:Resize(true)
 		else
 			-- page button
@@ -1894,7 +1896,7 @@ do
 				utility:Tween(section.container.Title, {TextTransparency = 1}, 0.1)
 			end
 			
-			wait(0.1)
+			task.wait(0.1)
 			
 			page.lastPosition = page.container.CanvasPosition.Y
 			page:Resize()
@@ -1981,7 +1983,7 @@ do
 			Position = position[value] + UDim2.new(0, 0, 0, 2.5)
 		}, 0.2)
 		
-		wait(0.1)
+		task.wait(0.1)
 		utility:Tween(frame, {
 			Size = UDim2.new(1, -22, 1, -4),
 			Position = position[value]
